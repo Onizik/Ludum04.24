@@ -1,0 +1,156 @@
+[gd_scene load_steps=18 format=3 uid="uid://cdrc1qlfdrr2f"]
+
+[ext_resource type="Texture2D" uid="uid://cblcsys1a53p3" path="res://assets/game/bg/field_temp.jpg" id="1_xgweq"]
+[ext_resource type="Texture2D" uid="uid://bmeykj52gn6a5" path="res://assets/ui/header_bg.png" id="2_5k2rg"]
+[ext_resource type="Texture2D" uid="uid://demu3ij8tlmsl" path="res://assets/game/head/count1.png" id="3_blu5f"]
+[ext_resource type="Texture2D" uid="uid://bs4gjex1wmbve" path="res://assets/ui/footer_bg.png" id="3_m1jyi"]
+[ext_resource type="Texture2D" uid="uid://ma7jvr1845lj" path="res://assets/game/head/count2.png" id="4_fxfwm"]
+[ext_resource type="Texture2D" uid="uid://dcy0eylkb6lve" path="res://assets/game/head/round.png" id="5_j5a7s"]
+[ext_resource type="Texture2D" uid="uid://dte3vwlhxmcgn" path="res://assets/game/spells/fight_button.png" id="7_ex2rl"]
+[ext_resource type="Texture2D" uid="uid://cjmhults188lh" path="res://assets/game/spells/m1.png" id="8_0anl8"]
+[ext_resource type="Texture2D" uid="uid://ctj5u1eafxj2m" path="res://assets/game/spells/m2.png" id="9_bmp7c"]
+[ext_resource type="Texture2D" uid="uid://b3uha4nhnw4he" path="res://assets/game/spells/m3.png" id="10_wm3i4"]
+[ext_resource type="Texture2D" uid="uid://c7owpamqx5myw" path="res://assets/game/spells/p1.png" id="11_wx3ou"]
+[ext_resource type="Texture2D" uid="uid://b4a1wyvxa2afo" path="res://assets/game/spells/p2.png" id="12_h0fb3"]
+[ext_resource type="Texture2D" uid="uid://p1mudxgx4rla" path="res://assets/game/spells/p3.png" id="13_lh688"]
+[ext_resource type="Texture2D" uid="uid://dvua2i762wlll" path="res://assets/game/enemy/enemy_temp.png" id="14_vji3i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5bgcr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_blu5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fxfwm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ssr4a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_j5a7s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_wbhyu"]
+frames = 6
+frame_0/texture = ExtResource("8_0anl8")
+frame_1/texture = ExtResource("9_bmp7c")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("10_wm3i4")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("11_wx3ou")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("12_h0fb3")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("13_lh688")
+frame_5/duration = 1.0
+
+[node name="main_game" type="Node2D"]
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(640, 240)
+texture = ExtResource("1_xgweq")
+
+[node name="header_bg" type="Sprite2D" parent="."]
+position = Vector2(640, 35)
+texture = ExtResource("2_5k2rg")
+
+[node name="count1" type="AnimatedSprite2D" parent="header_bg"]
+position = Vector2(-300, 0)
+sprite_frames = SubResource("SpriteFrames_5bgcr")
+frame = 1
+
+[node name="count2" type="AnimatedSprite2D" parent="header_bg"]
+position = Vector2(300, 0)
+sprite_frames = SubResource("SpriteFrames_5bgcr")
+
+[node name="round" type="AnimatedSprite2D" parent="header_bg"]
+sprite_frames = SubResource("SpriteFrames_ssr4a")
+
+[node name="footer_bg" type="Sprite2D" parent="."]
+position = Vector2(640, 645)
+texture = ExtResource("3_m1jyi")
+
+[node name="fight" type="TextureButton" parent="footer_bg"]
+offset_left = -134.0
+offset_top = -75.0
+offset_right = 126.0
+offset_bottom = 75.0
+texture_normal = ExtResource("7_ex2rl")
+
+[node name="sp1" type="TextureButton" parent="footer_bg"]
+offset_left = -639.0
+offset_top = -74.0
+offset_right = -466.0
+offset_bottom = 75.0
+texture_normal = SubResource("AnimatedTexture_wbhyu")
+
+[node name="sp2" type="TextureButton" parent="footer_bg"]
+offset_left = -468.0
+offset_top = -74.0
+offset_right = -295.0
+offset_bottom = 76.0
+texture_normal = SubResource("AnimatedTexture_wbhyu")
+
+[node name="sp3" type="TextureButton" parent="footer_bg"]
+offset_left = -295.0
+offset_top = -75.0
+offset_right = -122.0
+offset_bottom = 75.0
+texture_normal = SubResource("AnimatedTexture_wbhyu")
+
+[node name="sp4" type="TextureButton" parent="footer_bg"]
+offset_left = 123.0
+offset_top = -78.0
+offset_right = 296.0
+offset_bottom = 72.0
+texture_normal = SubResource("AnimatedTexture_wbhyu")
+
+[node name="sp5" type="TextureButton" parent="footer_bg"]
+offset_left = 295.0
+offset_top = -76.0
+offset_right = 468.0
+offset_bottom = 74.0
+texture_normal = SubResource("AnimatedTexture_wbhyu")
+
+[node name="sp6" type="TextureButton" parent="footer_bg"]
+offset_left = 466.0
+offset_top = -75.0
+offset_right = 639.0
+offset_bottom = 75.0
+texture_normal = SubResource("AnimatedTexture_wbhyu")
+
+[node name="enemies" type="Sprite2D" parent="."]
+
+[node name="d1" type="Sprite2D" parent="enemies"]
+position = Vector2(108, 208)
+texture = ExtResource("14_vji3i")
+
+[node name="d2" type="Sprite2D" parent="enemies"]
+position = Vector2(147, 435)
+texture = ExtResource("14_vji3i")
+
+[node name="d3" type="Sprite2D" parent="enemies"]
+position = Vector2(349, 314)
+texture = ExtResource("14_vji3i")
+
+[node name="d4" type="Sprite2D" parent="enemies"]
+position = Vector2(1072, 214)
+texture = ExtResource("14_vji3i")
+
+[node name="d5" type="Sprite2D" parent="enemies"]
+position = Vector2(1176, 446)
+texture = ExtResource("14_vji3i")
+
+[node name="d6" type="Sprite2D" parent="enemies"]
+position = Vector2(910, 435)
+texture = ExtResource("14_vji3i")
