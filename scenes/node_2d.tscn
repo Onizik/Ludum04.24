@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://c26xx670kgosh"]
+
+[ext_resource type="Script" path="res://Node2D.gd" id="1_mcrx3"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_mcrx3")
+
+[node name="te1" type="Button" parent="."]
+offset_right = 101.0
+offset_bottom = 96.0
+text = "test1"
+
+[node name="te2" type="Button" parent="."]
+offset_left = 467.0
+offset_top = 11.0
+offset_right = 568.0
+offset_bottom = 107.0
+text = "test2"
+
+[node name="te3" type="Button" parent="."]
+offset_left = 148.0
+offset_top = 6.0
+offset_right = 249.0
+offset_bottom = 102.0
+text = "test3"
+
+[node name="te4" type="Button" parent="."]
+offset_left = 309.0
+offset_top = 8.0
+offset_right = 410.0
+offset_bottom = 104.0
+text = "test4"
+
+[node name="sp1" type="Button" parent="."]
+offset_left = 91.0
+offset_top = 178.0
+offset_right = 235.0
+offset_bottom = 240.0
+text = "sp1"
+
+[node name="sp2" type="Button" parent="."]
+offset_left = 323.0
+offset_top = 175.0
+offset_right = 467.0
+offset_bottom = 237.0
+text = "sp2"
+
+[connection signal="pressed" from="sp1" to="." method="_on_sp_1_pressed"]
