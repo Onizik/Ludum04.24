@@ -45,8 +45,20 @@ func _ready():
 	$cat4/cat3.visible = false
 	$cat4/cat4.visible = true
 	$cat4/AP.play("cat4")
-
-
+	
+	$footer_bg/sp_butt1/butt_r.visible = false
+	$footer_bg/sp_butt1/butt_r.disabled = true
+	
+	$footer_bg/sp_butt2/butt_r.visible = false
+	$footer_bg/sp_butt2/butt_r.disabled = true
+	$footer_bg/sp_butt3/butt_r.visible = false
+	$footer_bg/sp_butt3/butt_r.disabled = true
+	$footer_bg/sp_butt4/butt_b.visible = false
+	$footer_bg/sp_butt4/butt_b.disabled = true
+	$footer_bg/sp_butt5/butt_b.visible = false
+	$footer_bg/sp_butt5/butt_b.disabled = true
+	$footer_bg/sp_butt6/butt_b.visible = false
+	$footer_bg/sp_butt6/butt_b.disabled = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

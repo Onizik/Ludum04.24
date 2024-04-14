@@ -1,18 +1,44 @@
-[gd_scene load_steps=19 format=3 uid="uid://cdrc1qlfdrr2f"]
+[gd_scene load_steps=16 format=3 uid="uid://cdrc1qlfdrr2f"]
 
 [ext_resource type="Script" path="res://scripts/main_game.gd" id="1_ld8cn"]
 [ext_resource type="Texture2D" uid="uid://deqp6y2gi4x7f" path="res://assets/game/bg/field.png" id="2_0faxp"]
-[ext_resource type="Texture2D" uid="uid://bmeykj52gn6a5" path="res://assets/ui/header_bg.png" id="2_5k2rg"]
 [ext_resource type="Texture2D" uid="uid://g0dihpj22e0q" path="res://assets/game/bg/trees.png" id="3_07rop"]
-[ext_resource type="Texture2D" uid="uid://demu3ij8tlmsl" path="res://assets/game/head/count1.png" id="3_blu5f"]
 [ext_resource type="PackedScene" uid="uid://c2i2u3j54rnpu" path="res://assets/game/animations/cat.tscn" id="3_ejefy"]
-[ext_resource type="Texture2D" uid="uid://bs4gjex1wmbve" path="res://assets/ui/footer_bg.png" id="3_m1jyi"]
-[ext_resource type="Texture2D" uid="uid://ma7jvr1845lj" path="res://assets/game/head/count2.png" id="4_fxfwm"]
 [ext_resource type="Texture2D" uid="uid://cvvp6jdj33mxf" path="res://assets/game/bg/fog.png" id="4_kwsf6"]
-[ext_resource type="Texture2D" uid="uid://dcy0eylkb6lve" path="res://assets/game/head/round.png" id="5_j5a7s"]
-[ext_resource type="Texture2D" uid="uid://dte3vwlhxmcgn" path="res://assets/game/spells/fight_button.png" id="7_ex2rl"]
+[ext_resource type="Texture2D" uid="uid://cmgvg10v1b6u0" path="res://assets/ui/header.png" id="7_4jglx"]
+[ext_resource type="Texture2D" uid="uid://1815gvep7a3y" path="res://assets/ui/round_board.png" id="8_ghyrp"]
+[ext_resource type="Texture2D" uid="uid://cijpobj1t5s0p" path="res://assets/ui/count.png" id="9_qllqk"]
+[ext_resource type="Texture2D" uid="uid://bj56uo2qh7jra" path="res://assets/ui/footer.png" id="10_fuyxb"]
+[ext_resource type="Texture2D" uid="uid://c2bclg7smvo4w" path="res://assets/ui/fight_man.png" id="11_tbac7"]
 [ext_resource type="PackedScene" uid="uid://c66qtrig6h650" path="res://scenes/sp_butt.tscn" id="13_6i7n4"]
 [ext_resource type="PackedScene" uid="uid://bc1qrum2m26d8" path="res://assets/game/animations/bes.tscn" id="19_d6v85"]
+
+[sub_resource type="Animation" id="Animation_xu7rj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("field/fog:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("field/fog:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_ybfr5"]
 resource_name = "fog"
@@ -43,63 +69,11 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(35.865, 0), Vector2(-31.135, 0.19)]
 }
 
-[sub_resource type="Animation" id="Animation_xu7rj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("field/fog:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("field/fog:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gwms2"]
 _data = {
 "RESET": SubResource("Animation_xu7rj"),
 "fog": SubResource("Animation_ybfr5")
 }
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_5bgcr"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_blu5f")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_fxfwm")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ssr4a"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_j5a7s")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="main_game" type="Node2D"]
 script = ExtResource("1_ld8cn")
@@ -110,11 +84,11 @@ libraries = {
 }
 
 [node name="field" type="Sprite2D" parent="."]
-position = Vector2(640, 400)
+position = Vector2(640, 343)
 texture = ExtResource("2_0faxp")
 
 [node name="tree" type="Sprite2D" parent="field"]
-position = Vector2(0, -220)
+position = Vector2(0, -227)
 texture = ExtResource("3_07rop")
 
 [node name="fog" type="Sprite2D" parent="field"]
@@ -127,73 +101,207 @@ light_mask = 0
 visibility_layer = 2
 z_index = 1
 texture_filter = 1
-position = Vector2(858, 227)
+position = Vector2(860, 256)
 
 [node name="bes2" parent="." instance=ExtResource("19_d6v85")]
 z_index = 2
-position = Vector2(1019, 423)
+position = Vector2(1015, 473)
 
 [node name="bes3" parent="." instance=ExtResource("19_d6v85")]
 z_index = 2
-position = Vector2(1148, 228)
+position = Vector2(1163, 257)
 
 [node name="cat" parent="." instance=ExtResource("3_ejefy")]
 z_index = 2
-position = Vector2(413, 419)
+position = Vector2(397, 466)
 
 [node name="cat2" parent="." instance=ExtResource("3_ejefy")]
 z_index = 2
-position = Vector2(324, 222)
+position = Vector2(295, 276)
 
 [node name="cat3" parent="." instance=ExtResource("3_ejefy")]
 z_index = 2
-position = Vector2(168, 421)
+position = Vector2(156, 467)
 
 [node name="cat4" parent="." instance=ExtResource("3_ejefy")]
 z_index = 2
-position = Vector2(103, 225)
+position = Vector2(78, 275)
 
 [node name="header_bg" type="Sprite2D" parent="."]
 position = Vector2(640, 35)
-texture = ExtResource("2_5k2rg")
+texture = ExtResource("7_4jglx")
 
-[node name="count1" type="AnimatedSprite2D" parent="header_bg"]
-position = Vector2(-300, 0)
-sprite_frames = SubResource("SpriteFrames_5bgcr")
-frame = 1
+[node name="round" type="Sprite2D" parent="header_bg"]
+position = Vector2(-5, 19)
+texture = ExtResource("8_ghyrp")
 
-[node name="count2" type="AnimatedSprite2D" parent="header_bg"]
-position = Vector2(300, 0)
-sprite_frames = SubResource("SpriteFrames_5bgcr")
+[node name="round" type="Label" parent="header_bg/round"]
+offset_left = -92.0
+offset_top = -36.0
+offset_right = 164.0
+offset_bottom = 38.0
+theme_override_font_sizes/font_size = 49
+text = "Round 1
+"
 
-[node name="round" type="AnimatedSprite2D" parent="header_bg"]
-sprite_frames = SubResource("SpriteFrames_ssr4a")
+[node name="count_left" type="Sprite2D" parent="header_bg"]
+position = Vector2(-340, 13)
+texture = ExtResource("9_qllqk")
+
+[node name="text" type="Label" parent="header_bg/count_left"]
+offset_left = -15.0
+offset_top = -17.0
+offset_right = 28.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 42
+text = "8"
+
+[node name="count_right" type="Sprite2D" parent="header_bg"]
+position = Vector2(340, 13)
+texture = ExtResource("9_qllqk")
+
+[node name="text" type="Label" parent="header_bg/count_right"]
+offset_left = -17.0
+offset_top = -23.0
+offset_right = 23.0
+offset_bottom = 36.0
+theme_override_font_sizes/font_size = 48
+text = "9"
 
 [node name="footer_bg" type="Sprite2D" parent="."]
 position = Vector2(640, 645)
-texture = ExtResource("3_m1jyi")
+texture = ExtResource("10_fuyxb")
 
 [node name="fight" type="TextureButton" parent="footer_bg"]
-offset_left = -134.0
-offset_top = -75.0
-offset_right = 126.0
-offset_bottom = 75.0
-texture_normal = ExtResource("7_ex2rl")
+offset_left = -148.0
+offset_top = -102.0
+offset_right = 137.0
+offset_bottom = 74.0
+texture_normal = ExtResource("11_tbac7")
+
+[node name="text" type="RichTextLabel" parent="footer_bg/fight"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 27.0
+offset_right = 279.0
+offset_bottom = 160.0
+theme_override_font_sizes/normal_font_size = 67
+text = "  Fight!"
+tab_size = 7
 
 [node name="sp_butt1" parent="footer_bg" instance=ExtResource("13_6i7n4")]
 position = Vector2(-549, -2)
 
+[node name="text_plus" type="Label" parent="footer_bg/sp_butt1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -42.0
+offset_right = 57.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.215686, 0.796078, 0.313726, 1)
+theme_override_font_sizes/font_size = 59
+text = "+3"
+
 [node name="sp_butt2" parent="footer_bg" instance=ExtResource("13_6i7n4")]
 position = Vector2(-374, 0)
+
+[node name="text_plus" type="Label" parent="footer_bg/sp_butt2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -42.0
+offset_right = 57.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.215686, 0.796078, 0.313726, 1)
+theme_override_font_sizes/font_size = 59
+text = "+1"
 
 [node name="sp_butt3" parent="footer_bg" instance=ExtResource("13_6i7n4")]
 position = Vector2(-206, -2)
 
+[node name="text_plus" type="Label" parent="footer_bg/sp_butt3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -42.0
+offset_right = 57.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.215686, 0.796078, 0.313726, 1)
+theme_override_font_sizes/font_size = 59
+text = "+3"
+
 [node name="sp_butt4" parent="footer_bg" instance=ExtResource("13_6i7n4")]
 position = Vector2(210, 1)
+
+[node name="text_minus" type="Label" parent="footer_bg/sp_butt4"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -48.0
+offset_right = 47.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.878431, 0.180392, 0.164706, 1)
+theme_override_font_sizes/font_size = 59
+text = "-2
+"
 
 [node name="sp_butt5" parent="footer_bg" instance=ExtResource("13_6i7n4")]
 position = Vector2(385, 1)
 
+[node name="text_minus" type="Label" parent="footer_bg/sp_butt5"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -48.0
+offset_right = 47.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.878431, 0.180392, 0.164706, 1)
+theme_override_font_sizes/font_size = 59
+text = "-2
+"
+
 [node name="sp_butt6" parent="footer_bg" instance=ExtResource("13_6i7n4")]
 position = Vector2(553, 1)
+
+[node name="text_minus" type="Label" parent="footer_bg/sp_butt6"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -48.0
+offset_right = 47.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.878431, 0.180392, 0.164706, 1)
+theme_override_font_sizes/font_size = 59
+text = "-1
+"

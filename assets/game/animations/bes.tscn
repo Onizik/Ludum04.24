@@ -1,11 +1,10 @@
 [gd_scene load_steps=24 format=3 uid="uid://bc1qrum2m26d8"]
 
-[ext_resource type="Texture2D" uid="uid://db8o2pyv3oorw" path="res://assets/game/holo.png" id="1_ad2fa"]
 [ext_resource type="Texture2D" uid="uid://bf00n1s0iwde6" path="res://assets/game/enemy/bes1/parts/bes1_body.png" id="1_hgl7b"]
+[ext_resource type="Texture2D" uid="uid://jlv5w4o8p1ls" path="res://assets/game/red.png" id="1_xpr36"]
 [ext_resource type="Texture2D" uid="uid://df42pj1s5ilgc" path="res://assets/game/enemy/bes1/parts/bes1_arm_l.png" id="2_61j1t"]
-[ext_resource type="Texture2D" uid="uid://ctk45rutqqwds" path="res://assets/game/holo_press.png" id="2_lxcny"]
+[ext_resource type="Texture2D" uid="uid://bkpafbikaxmxk" path="res://assets/game/green.png" id="2_v62ee"]
 [ext_resource type="Texture2D" uid="uid://ey18x68n74ku" path="res://assets/game/enemy/bes1/parts/bes1_arm_r.png" id="3_0rxpv"]
-[ext_resource type="Texture2D" uid="uid://ba7tp5lou4648" path="res://assets/game/holo_hover.png" id="3_nhaah"]
 [ext_resource type="Texture2D" uid="uid://b0u2o0o5ja2xe" path="res://assets/game/enemy/bes1/parts/bes1_leg_l.png" id="4_f8q4e"]
 [ext_resource type="Texture2D" uid="uid://sdd1icr4856e" path="res://assets/game/enemy/bes1/parts/bes1_leg_r.png" id="5_0locl"]
 [ext_resource type="Texture2D" uid="uid://k1salf8dae1a" path="res://assets/game/enemy/bes2/parts/bes2_body.png" id="6_617fn"]
@@ -18,83 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://d5trakxugcvf" path="res://assets/game/enemy/bes4/bes4/bes4_arm_r.png" id="13_18va7"]
 [ext_resource type="Texture2D" uid="uid://574si2nlodth" path="res://assets/game/enemy/bes4/bes4/bes4_leg_l.png" id="14_rbce3"]
 [ext_resource type="Texture2D" uid="uid://cfm2g6ufi2u7a" path="res://assets/game/enemy/bes4/bes4/bes4_tail.png" id="15_ii4l2"]
-
-[sub_resource type="Animation" id="Animation_jjwwm"]
-resource_name = "idle"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("bes1/arm_l:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.83609]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("bes1/arm_r:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -0.565487]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("bes1/leg_l:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -0.141372]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("bes1/leg_r:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.282743]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("bes1:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.282743]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("bes1/arm_l:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(10.5895, -28.0689)]
-}
+[ext_resource type="Texture2D" uid="uid://cimvpi0t6gfun" path="res://assets/game/norm.png" id="18_srj4m"]
 
 [sub_resource type="Animation" id="Animation_umm8v"]
 length = 0.001
@@ -411,6 +334,83 @@ tracks/25/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_jjwwm"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bes1/arm_l:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.83609]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bes1/arm_r:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.565487]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bes1/leg_l:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.141372]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("bes1/leg_r:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.282743]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("bes1:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.282743]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("bes1/arm_l:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(10.5895, -28.0689)]
+}
+
 [sub_resource type="Animation" id="Animation_cf8je"]
 resource_name = "idle_bes2"
 length = 2.0
@@ -672,14 +672,12 @@ _data = {
 [node name="bes" type="Node2D"]
 
 [node name="butt" type="TextureButton" parent="."]
-offset_left = -75.0
-offset_top = -113.0
-offset_right = 65.0
-offset_bottom = 137.0
-disabled = true
-texture_normal = ExtResource("1_ad2fa")
-texture_pressed = ExtResource("2_lxcny")
-texture_hover = ExtResource("3_nhaah")
+offset_left = -69.0
+offset_top = -160.0
+offset_right = 71.0
+offset_bottom = 90.0
+texture_normal = ExtResource("1_xpr36")
+texture_hover = ExtResource("2_v62ee")
 
 [node name="AP" type="AnimationPlayer" parent="."]
 libraries = {
@@ -687,7 +685,6 @@ libraries = {
 }
 
 [node name="bes1" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 texture = ExtResource("1_hgl7b")
 
@@ -745,3 +742,16 @@ texture = ExtResource("14_rbce3")
 [node name="tail" type="Sprite2D" parent="bes3"]
 z_index = -1
 texture = ExtResource("15_ii4l2")
+
+[node name="bubble" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, -34)
+texture = ExtResource("18_srj4m")
+
+[node name="numb" type="Label" parent="."]
+offset_left = -9.0
+offset_top = -148.0
+offset_right = 14.0
+offset_bottom = -111.0
+theme_override_font_sizes/font_size = 30
+text = "3"

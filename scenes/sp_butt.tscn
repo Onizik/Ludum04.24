@@ -1,15 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://c66qtrig6h650"]
+[gd_scene load_steps=4 format=3 uid="uid://c66qtrig6h650"]
 
-[ext_resource type="Texture2D" uid="uid://cjmhults188lh" path="res://assets/game/spells/m1.png" id="1_814sq"]
 [ext_resource type="Script" path="res://scripts/sp_butt.gd" id="1_xk6un"]
-[ext_resource type="Texture2D" uid="uid://ctj5u1eafxj2m" path="res://assets/game/spells/m2.png" id="2_1ao3o"]
-[ext_resource type="Texture2D" uid="uid://c7owpamqx5myw" path="res://assets/game/spells/p1.png" id="3_vojfj"]
-[ext_resource type="Texture2D" uid="uid://cy04kfp1ooplk" path="res://assets/game/spells/cover.png" id="4_pvisf"]
+[ext_resource type="Texture2D" uid="uid://cjlxo1dydc6ip" path="res://assets/ui/scroll_blue.png" id="2_v82wg"]
+[ext_resource type="Texture2D" uid="uid://cu5h1ftjxdlm8" path="res://assets/ui/scroll_red.png" id="3_ifqbr"]
 
 [node name="sp_butt" type="Node2D"]
 script = ExtResource("1_xk6un")
 
-[node name="butt" type="TextureButton" parent="."]
+[node name="butt_b" type="TextureButton" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -21,19 +19,29 @@ offset_right = 85.0
 offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("1_814sq")
-texture_pressed = ExtResource("2_1ao3o")
-texture_hover = ExtResource("3_vojfj")
+texture_normal = ExtResource("2_v82wg")
 
-[node name="Sprite2D" type="Sprite2D" parent="butt"]
-visible = false
-position = Vector2(85, 75)
-texture = ExtResource("4_pvisf")
+[node name="butt_r" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -75.0
+offset_right = 85.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_ifqbr")
 
 [node name="text" type="Label" parent="."]
 visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-text = "1"
+offset_left = -34.0
+offset_top = -33.0
+offset_right = 47.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 50
+text = "3"
 
-[connection signal="pressed" from="butt" to="." method="_on_butt_pressed"]
+[connection signal="pressed" from="butt_b" to="." method="_on_butt_pressed"]

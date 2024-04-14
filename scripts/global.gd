@@ -1,0 +1,16 @@
+extends Node
+var sp1 = true
+var sp2 = true
+var sp3 = true
+var sp4 = true
+var sp5 = true
+var sp6 = true
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
