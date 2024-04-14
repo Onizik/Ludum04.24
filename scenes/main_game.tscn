@@ -67,7 +67,16 @@ top_level = true
 light_mask = 0
 visibility_layer = 2
 z_index = 1
-position = Vector2(590, 260)
+texture_filter = 1
+position = Vector2(630, 225)
+
+[node name="bes2" parent="." instance=ExtResource("19_d6v85")]
+z_index = 2
+position = Vector2(525, 376)
+
+[node name="bes3" parent="." instance=ExtResource("19_d6v85")]
+z_index = 2
+position = Vector2(722, 455)
 
 [node name="bg" type="Sprite2D" parent="."]
 position = Vector2(640, 240)
