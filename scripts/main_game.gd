@@ -17,7 +17,32 @@ func _ready():
 	$bes3/bes1.visible = false
 	$bes3/bes2.visible = false
 	$bes3/AP.play("idle_bes3")
-	pass # Replace with function body.
+	
+	
+	
+	$cat/cat1.visible = true
+	$cat/cat2.visible = false
+	$cat/cat3.visible = false
+	$cat/cat4.visible = false
+	$cat/AP.play("cat1")
+	
+	$cat2/cat1.visible = false
+	$cat2/cat2.visible = true
+	$cat2/cat3.visible = false
+	$cat2/cat4.visible = false
+	$cat2/AP.play("cat2")
+	
+	$cat3/cat1.visible = false
+	$cat3/cat2.visible = false
+	$cat3/cat3.visible = true
+	$cat3/cat4.visible = false
+	$cat3/AP.play("cat3")
+	
+	$cat4/cat1.visible = false
+	$cat4/cat2.visible = false
+	$cat4/cat3.visible = false
+	$cat4/cat4.visible = true
+	$cat4/AP.play("cat4")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

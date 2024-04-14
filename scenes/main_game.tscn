@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://cdrc1qlfdrr2f"]
+[gd_scene load_steps=20 format=3 uid="uid://cdrc1qlfdrr2f"]
 
 [ext_resource type="Script" path="res://scripts/main_game.gd" id="1_ld8cn"]
 [ext_resource type="Texture2D" uid="uid://cblcsys1a53p3" path="res://assets/game/bg/field_temp.jpg" id="1_xgweq"]
 [ext_resource type="Texture2D" uid="uid://bmeykj52gn6a5" path="res://assets/ui/header_bg.png" id="2_5k2rg"]
 [ext_resource type="Texture2D" uid="uid://demu3ij8tlmsl" path="res://assets/game/head/count1.png" id="3_blu5f"]
+[ext_resource type="PackedScene" uid="uid://c2i2u3j54rnpu" path="res://assets/game/animations/cat.tscn" id="3_ejefy"]
 [ext_resource type="Texture2D" uid="uid://bs4gjex1wmbve" path="res://assets/ui/footer_bg.png" id="3_m1jyi"]
 [ext_resource type="Texture2D" uid="uid://ma7jvr1845lj" path="res://assets/game/head/count2.png" id="4_fxfwm"]
 [ext_resource type="Texture2D" uid="uid://dcy0eylkb6lve" path="res://assets/game/head/round.png" id="5_j5a7s"]
@@ -14,10 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://c7owpamqx5myw" path="res://assets/game/spells/p1.png" id="11_wx3ou"]
 [ext_resource type="Texture2D" uid="uid://b4a1wyvxa2afo" path="res://assets/game/spells/p2.png" id="12_h0fb3"]
 [ext_resource type="Texture2D" uid="uid://p1mudxgx4rla" path="res://assets/game/spells/p3.png" id="13_lh688"]
-[ext_resource type="Texture2D" uid="uid://b7d0u20l0y7hu" path="res://assets/game/enemy/bes1/bes1.png" id="14_5whjd"]
-[ext_resource type="Texture2D" uid="uid://dvua2i762wlll" path="res://assets/game/enemy/enemy_temp.png" id="14_vji3i"]
-[ext_resource type="Texture2D" uid="uid://x6rhagmgh51x" path="res://assets/game/enemy/bes2/bes2.png" id="15_nxl0s"]
-[ext_resource type="Texture2D" uid="uid://cekuc218tqsjb" path="res://assets/game/enemy/bes4/Чертила средний.png" id="16_c4qpa"]
 [ext_resource type="PackedScene" uid="uid://bc1qrum2m26d8" path="res://assets/game/animations/bes.tscn" id="19_d6v85"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5bgcr"]
@@ -68,15 +65,31 @@ light_mask = 0
 visibility_layer = 2
 z_index = 1
 texture_filter = 1
-position = Vector2(630, 225)
+position = Vector2(893, 206)
 
 [node name="bes2" parent="." instance=ExtResource("19_d6v85")]
 z_index = 2
-position = Vector2(525, 376)
+position = Vector2(1034, 439)
 
 [node name="bes3" parent="." instance=ExtResource("19_d6v85")]
 z_index = 2
-position = Vector2(722, 455)
+position = Vector2(1151, 201)
+
+[node name="cat" parent="." instance=ExtResource("3_ejefy")]
+z_index = 2
+position = Vector2(108, 220)
+
+[node name="cat2" parent="." instance=ExtResource("3_ejefy")]
+z_index = 2
+position = Vector2(335, 221)
+
+[node name="cat3" parent="." instance=ExtResource("3_ejefy")]
+z_index = 2
+position = Vector2(144, 437)
+
+[node name="cat4" parent="." instance=ExtResource("3_ejefy")]
+z_index = 2
+position = Vector2(352, 437)
 
 [node name="bg" type="Sprite2D" parent="."]
 position = Vector2(640, 240)
@@ -150,34 +163,5 @@ offset_top = -75.0
 offset_right = 639.0
 offset_bottom = 75.0
 texture_normal = SubResource("AnimatedTexture_wbhyu")
-
-[node name="enemies" type="Sprite2D" parent="."]
-
-[node name="d1" type="Sprite2D" parent="enemies"]
-position = Vector2(108, 208)
-texture = ExtResource("14_5whjd")
-flip_h = true
-
-[node name="d2" type="Sprite2D" parent="enemies"]
-position = Vector2(147, 435)
-texture = ExtResource("15_nxl0s")
-flip_h = true
-
-[node name="d3" type="Sprite2D" parent="enemies"]
-position = Vector2(349, 314)
-texture = ExtResource("16_c4qpa")
-flip_h = true
-
-[node name="d4" type="Sprite2D" parent="enemies"]
-position = Vector2(1072, 214)
-texture = ExtResource("14_vji3i")
-
-[node name="d5" type="Sprite2D" parent="enemies"]
-position = Vector2(1176, 446)
-texture = ExtResource("14_vji3i")
-
-[node name="d6" type="Sprite2D" parent="enemies"]
-position = Vector2(910, 435)
-texture = ExtResource("14_vji3i")
 
 [connection signal="ready" from="footer_bg/sp3" to="." method="_on_sp_3_ready"]
