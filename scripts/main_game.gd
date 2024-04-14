@@ -3,6 +3,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$anim_game.play("fog")
+	
 	$bes/bes1.visible = true
 	$bes/bes2.visible = false
 	$bes/bes3.visible = false
