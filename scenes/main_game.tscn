@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cdrc1qlfdrr2f"]
+[gd_scene load_steps=19 format=3 uid="uid://cdrc1qlfdrr2f"]
 
 [ext_resource type="Script" path="res://scripts/main_game.gd" id="1_ld8cn"]
 [ext_resource type="Texture2D" uid="uid://deqp6y2gi4x7f" path="res://assets/game/bg/field.png" id="2_0faxp"]
@@ -11,12 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cvvp6jdj33mxf" path="res://assets/game/bg/fog.png" id="4_kwsf6"]
 [ext_resource type="Texture2D" uid="uid://dcy0eylkb6lve" path="res://assets/game/head/round.png" id="5_j5a7s"]
 [ext_resource type="Texture2D" uid="uid://dte3vwlhxmcgn" path="res://assets/game/spells/fight_button.png" id="7_ex2rl"]
-[ext_resource type="Texture2D" uid="uid://cjmhults188lh" path="res://assets/game/spells/m1.png" id="8_0anl8"]
-[ext_resource type="Texture2D" uid="uid://ctj5u1eafxj2m" path="res://assets/game/spells/m2.png" id="9_bmp7c"]
-[ext_resource type="Texture2D" uid="uid://b3uha4nhnw4he" path="res://assets/game/spells/m3.png" id="10_wm3i4"]
-[ext_resource type="Texture2D" uid="uid://c7owpamqx5myw" path="res://assets/game/spells/p1.png" id="11_wx3ou"]
-[ext_resource type="Texture2D" uid="uid://b4a1wyvxa2afo" path="res://assets/game/spells/p2.png" id="12_h0fb3"]
-[ext_resource type="Texture2D" uid="uid://p1mudxgx4rla" path="res://assets/game/spells/p3.png" id="13_lh688"]
+[ext_resource type="PackedScene" uid="uid://c66qtrig6h650" path="res://scenes/sp_butt.tscn" id="13_6i7n4"]
 [ext_resource type="PackedScene" uid="uid://bc1qrum2m26d8" path="res://assets/game/animations/bes.tscn" id="19_d6v85"]
 
 [sub_resource type="Animation" id="Animation_ybfr5"]
@@ -106,20 +101,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_wbhyu"]
-frames = 6
-frame_0/texture = ExtResource("8_0anl8")
-frame_1/texture = ExtResource("9_bmp7c")
-frame_1/duration = 1.0
-frame_2/texture = ExtResource("10_wm3i4")
-frame_2/duration = 1.0
-frame_3/texture = ExtResource("11_wx3ou")
-frame_3/duration = 1.0
-frame_4/texture = ExtResource("12_h0fb3")
-frame_4/duration = 1.0
-frame_5/texture = ExtResource("13_lh688")
-frame_5/duration = 1.0
-
 [node name="main_game" type="Node2D"]
 script = ExtResource("1_ld8cn")
 
@@ -150,7 +131,7 @@ position = Vector2(858, 227)
 
 [node name="bes2" parent="." instance=ExtResource("19_d6v85")]
 z_index = 2
-position = Vector2(1022, 442)
+position = Vector2(1019, 423)
 
 [node name="bes3" parent="." instance=ExtResource("19_d6v85")]
 z_index = 2
@@ -158,19 +139,19 @@ position = Vector2(1148, 228)
 
 [node name="cat" parent="." instance=ExtResource("3_ejefy")]
 z_index = 2
-position = Vector2(343, 459)
+position = Vector2(413, 419)
 
 [node name="cat2" parent="." instance=ExtResource("3_ejefy")]
 z_index = 2
-position = Vector2(343, 233)
+position = Vector2(324, 222)
 
 [node name="cat3" parent="." instance=ExtResource("3_ejefy")]
 z_index = 2
-position = Vector2(120, 450)
+position = Vector2(168, 421)
 
 [node name="cat4" parent="." instance=ExtResource("3_ejefy")]
 z_index = 2
-position = Vector2(128, 235)
+position = Vector2(103, 225)
 
 [node name="header_bg" type="Sprite2D" parent="."]
 position = Vector2(640, 35)
@@ -199,46 +180,20 @@ offset_right = 126.0
 offset_bottom = 75.0
 texture_normal = ExtResource("7_ex2rl")
 
-[node name="sp1" type="TextureButton" parent="footer_bg"]
-offset_left = -639.0
-offset_top = -74.0
-offset_right = -466.0
-offset_bottom = 75.0
-texture_normal = SubResource("AnimatedTexture_wbhyu")
+[node name="sp_butt1" parent="footer_bg" instance=ExtResource("13_6i7n4")]
+position = Vector2(-549, -2)
 
-[node name="sp2" type="TextureButton" parent="footer_bg"]
-offset_left = -468.0
-offset_top = -74.0
-offset_right = -295.0
-offset_bottom = 76.0
-texture_normal = SubResource("AnimatedTexture_wbhyu")
+[node name="sp_butt2" parent="footer_bg" instance=ExtResource("13_6i7n4")]
+position = Vector2(-374, 0)
 
-[node name="sp3" type="TextureButton" parent="footer_bg"]
-offset_left = -295.0
-offset_top = -75.0
-offset_right = -122.0
-offset_bottom = 75.0
-texture_normal = SubResource("AnimatedTexture_wbhyu")
+[node name="sp_butt3" parent="footer_bg" instance=ExtResource("13_6i7n4")]
+position = Vector2(-206, -2)
 
-[node name="sp4" type="TextureButton" parent="footer_bg"]
-offset_left = 123.0
-offset_top = -78.0
-offset_right = 296.0
-offset_bottom = 72.0
-texture_normal = SubResource("AnimatedTexture_wbhyu")
+[node name="sp_butt4" parent="footer_bg" instance=ExtResource("13_6i7n4")]
+position = Vector2(210, 1)
 
-[node name="sp5" type="TextureButton" parent="footer_bg"]
-offset_left = 295.0
-offset_top = -76.0
-offset_right = 468.0
-offset_bottom = 74.0
-texture_normal = SubResource("AnimatedTexture_wbhyu")
+[node name="sp_butt5" parent="footer_bg" instance=ExtResource("13_6i7n4")]
+position = Vector2(385, 1)
 
-[node name="sp6" type="TextureButton" parent="footer_bg"]
-offset_left = 466.0
-offset_top = -75.0
-offset_right = 639.0
-offset_bottom = 75.0
-texture_normal = SubResource("AnimatedTexture_wbhyu")
-
-[connection signal="ready" from="footer_bg/sp3" to="." method="_on_sp_3_ready"]
+[node name="sp_butt6" parent="footer_bg" instance=ExtResource("13_6i7n4")]
+position = Vector2(553, 1)

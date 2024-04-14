@@ -1,8 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://bc1qrum2m26d8"]
+[gd_scene load_steps=24 format=3 uid="uid://bc1qrum2m26d8"]
 
+[ext_resource type="Texture2D" uid="uid://db8o2pyv3oorw" path="res://assets/game/holo.png" id="1_ad2fa"]
 [ext_resource type="Texture2D" uid="uid://bf00n1s0iwde6" path="res://assets/game/enemy/bes1/parts/bes1_body.png" id="1_hgl7b"]
 [ext_resource type="Texture2D" uid="uid://df42pj1s5ilgc" path="res://assets/game/enemy/bes1/parts/bes1_arm_l.png" id="2_61j1t"]
+[ext_resource type="Texture2D" uid="uid://ctk45rutqqwds" path="res://assets/game/holo_press.png" id="2_lxcny"]
 [ext_resource type="Texture2D" uid="uid://ey18x68n74ku" path="res://assets/game/enemy/bes1/parts/bes1_arm_r.png" id="3_0rxpv"]
+[ext_resource type="Texture2D" uid="uid://ba7tp5lou4648" path="res://assets/game/holo_hover.png" id="3_nhaah"]
 [ext_resource type="Texture2D" uid="uid://b0u2o0o5ja2xe" path="res://assets/game/enemy/bes1/parts/bes1_leg_l.png" id="4_f8q4e"]
 [ext_resource type="Texture2D" uid="uid://sdd1icr4856e" path="res://assets/game/enemy/bes1/parts/bes1_leg_r.png" id="5_0locl"]
 [ext_resource type="Texture2D" uid="uid://k1salf8dae1a" path="res://assets/game/enemy/bes2/parts/bes2_body.png" id="6_617fn"]
@@ -668,6 +671,16 @@ _data = {
 
 [node name="bes" type="Node2D"]
 
+[node name="butt" type="TextureButton" parent="."]
+offset_left = -75.0
+offset_top = -113.0
+offset_right = 65.0
+offset_bottom = 137.0
+disabled = true
+texture_normal = ExtResource("1_ad2fa")
+texture_pressed = ExtResource("2_lxcny")
+texture_hover = ExtResource("3_nhaah")
+
 [node name="AP" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_df4n8")
@@ -710,6 +723,7 @@ z_index = -1
 texture = ExtResource("9_3jl76")
 
 [node name="bes3" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 texture = ExtResource("10_4mhxk")
 

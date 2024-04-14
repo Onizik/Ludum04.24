@@ -1,8 +1,11 @@
-[gd_scene load_steps=31 format=3 uid="uid://c2i2u3j54rnpu"]
+[gd_scene load_steps=34 format=3 uid="uid://c2i2u3j54rnpu"]
 
+[ext_resource type="Texture2D" uid="uid://db8o2pyv3oorw" path="res://assets/game/holo.png" id="1_4fuqo"]
 [ext_resource type="Texture2D" uid="uid://biuunoqdcrddo" path="res://assets/game/enemy/cat1/parts/body.png" id="1_aqdl7"]
+[ext_resource type="Texture2D" uid="uid://ctk45rutqqwds" path="res://assets/game/holo_press.png" id="2_n45cp"]
 [ext_resource type="Texture2D" uid="uid://bei7h76j73tv2" path="res://assets/game/enemy/cat1/parts/arm_l.png" id="2_vppkb"]
 [ext_resource type="Texture2D" uid="uid://crqn8a7340xq8" path="res://assets/game/enemy/cat1/parts/arm_r.png" id="3_12anj"]
+[ext_resource type="Texture2D" uid="uid://ba7tp5lou4648" path="res://assets/game/holo_hover.png" id="3_a8068"]
 [ext_resource type="Texture2D" uid="uid://bppl61bt1as31" path="res://assets/game/enemy/cat1/parts/tail.png" id="4_gs55j"]
 [ext_resource type="Texture2D" uid="uid://u2v0qghqq745" path="res://assets/game/enemy/cat1/parts/leg_r.png" id="5_px65x"]
 [ext_resource type="Texture2D" uid="uid://b4bcjj7hgby0h" path="res://assets/game/enemy/cat1/parts/leg_l.png" id="6_vkc64"]
@@ -1210,12 +1213,24 @@ _data = {
 
 [node name="cat" type="Node2D"]
 
+[node name="butt" type="TextureButton" parent="."]
+visible = false
+offset_left = -71.0
+offset_top = -109.0
+offset_right = 69.0
+offset_bottom = 141.0
+disabled = true
+texture_normal = ExtResource("1_4fuqo")
+texture_pressed = ExtResource("2_n45cp")
+texture_hover = ExtResource("3_a8068")
+
 [node name="AP" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_udp0t")
 }
 
 [node name="cat1" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_aqdl7")
 flip_h = true
 

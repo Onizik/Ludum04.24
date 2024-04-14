@@ -52,6 +52,4 @@ func _process(delta):
 	pass
 
 
-func _on_sp_3_ready():
-	
-	pass # Replace with function body.
+
