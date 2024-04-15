@@ -1329,13 +1329,21 @@ position = Vector2(-5, 19)
 texture = ExtResource("8_ghyrp")
 
 [node name="round" type="Label" parent="header_bg/round"]
-offset_left = -92.0
-offset_top = -36.0
-offset_right = 164.0
-offset_bottom = 38.0
-theme_override_font_sizes/font_size = 49
-text = "1
-"
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.0
+offset_top = -91.5
+offset_right = -17.0
+offset_bottom = -17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 45
+text = "Final Round"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="count_left" type="Sprite2D" parent="header_bg"]
 position = Vector2(-340, 13)

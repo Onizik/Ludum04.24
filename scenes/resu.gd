@@ -3,6 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$"/root/Global".round +=1
 	print("atb")
 	$ap.play ("rez")
 	if $"/root/Global".result >0:
@@ -10,13 +11,14 @@ func _ready():
 		$fade/stick/info/bes/count.text = "= 0"
 		$fade/stick/result.text = "Cats won this round!"
 	elif $"/root/Global".result <0:
-		$fade/stick/info/bes/count.text = "= " + str($"/root/Global".result )
+		$fade/stick/info/bes/count.text = "= " + str($"/root/Global".result - $"/root/Global".result - $"/root/Global".result )
 		$fade/stick/info/cat/count.text = "= 0"
 		$fade/stick/result.text = "Demons won this round!"
 	elif $"/root/Global".result ==0:
 		$fade/stick/info/bes/count.text = "= 0"
 		$fade/stick/info/cat/count.text = "= 0"
 		$fade/stick/result.text = "Tie! Well done!"
+	
 
 		
 

@@ -29,7 +29,9 @@ var result = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$fadea.play("fade")
-	$header_bg/round/round.text = str("Round " + str($"/root/Global".round))
+	if $"/root/Global".round != 3:
+		$header_bg/round/round.text = str("Round " + str($"/root/Global".round))
+	else: $header_bg/round/round.text = "Final Round"
 	generate()
 	add_some()
 	$anim_game.play("fog")
@@ -320,7 +322,7 @@ func casted():
 func _on_fight_pressed():
 	$anim_game.play("fight")
 	result = int($header_bg/count_left/text.text) - int($header_bg/count_right/text.text)
-	$"/root/Global".round +=1
+
 	$"/root/Global".result = result
 	if result >0:
 		$"/root/Global".los1 += 1
@@ -351,5 +353,8 @@ func _on_anim_game_animation_finished(anim_name):
 func _on_fadea_animation_finished(anim_name):
 	if anim_name == "fade_in":
 		print("fi")
-		get_tree().change_scene_to_file("res://scenes/resu.tscn")
+		if $"/root/Global".round <3:
+			get_tree().change_scene_to_file("res://scenes/resu.tscn")
+		else:
+			get_tree().change_scene_to_file("res://scenes/final.tscn")
 	pass # Replace with function body.

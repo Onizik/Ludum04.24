@@ -11,6 +11,7 @@ var side = true
 var number = 0
 var sp_butt = 0
 var round = 1
+var final = false
 var win = 0
 var los1 = 0
 var los2 = 0
