@@ -87,7 +87,7 @@ libraries = {
 position = Vector2(640, 343)
 texture = ExtResource("2_0faxp")
 
-[node name="tree" type="Sprite2D" parent="field"]
+[node name="trees" type="Sprite2D" parent="field"]
 position = Vector2(0, -227)
 texture = ExtResource("3_07rop")
 
