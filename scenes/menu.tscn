@@ -1,0 +1,189 @@
+[gd_scene load_steps=16 format=3 uid="uid://bifgye0hdld12"]
+
+[ext_resource type="Texture2D" uid="uid://bi5ebg8h04k04" path="res://assets/menu/bg_trees.png" id="1_pp7l4"]
+[ext_resource type="Texture2D" uid="uid://dhcr5m7wfch8s" path="res://assets/menu/bg.png" id="1_pw50o"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_ywdf8"]
+[ext_resource type="Texture2D" uid="uid://cy2n6joa0qrm0" path="res://assets/menu/bes1.png" id="3_bfiui"]
+[ext_resource type="Texture2D" uid="uid://bsfu6ovd4opxs" path="res://assets/menu/dudes.png" id="4_6axua"]
+[ext_resource type="Texture2D" uid="uid://5oluwpuqa130" path="res://assets/menu/bes2.png" id="4_8fobu"]
+[ext_resource type="Texture2D" uid="uid://b3k733f7xygol" path="res://assets/menu/bes3.png" id="5_i156c"]
+[ext_resource type="Texture2D" uid="uid://dy1hinxngltxu" path="res://assets/menu/cat1.png" id="6_54jru"]
+[ext_resource type="Texture2D" uid="uid://bojwdb608oqer" path="res://assets/menu/cat2.png" id="7_82ohp"]
+[ext_resource type="Texture2D" uid="uid://cjhcs5jk2jv4n" path="res://assets/menu/cat3.png" id="8_vr8k5"]
+[ext_resource type="Texture2D" uid="uid://b7r4wc5kt0oas" path="res://assets/menu/stck.png" id="11_e6yuv"]
+[ext_resource type="Texture2D" uid="uid://54uem4v5i4ky" path="res://assets/menu/buttons.png" id="12_gbelt"]
+[ext_resource type="Texture2D" uid="uid://bc71c4bijowd2" path="res://assets/menu/name.png" id="13_5yvmw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lof50"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bfiui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8fobu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i156c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8fobu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8fobu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bfiui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bfiui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8fobu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8fobu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i156c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i156c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i156c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qj7g0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_54jru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_82ohp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vr8k5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_54jru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_54jru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_54jru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_54jru")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_ywdf8")
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(640, 300)
+texture = ExtResource("1_pp7l4")
+
+[node name="bgtree" type="Sprite2D" parent="bg"]
+position = Vector2(0, 17)
+scale = Vector2(1, 1.35667)
+texture = ExtResource("1_pw50o")
+
+[node name="dudes" type="Sprite2D" parent="."]
+position = Vector2(862, 244.184)
+scale = Vector2(1.12245, 1.12245)
+texture = ExtResource("4_6axua")
+
+[node name="ba" type="Label" parent="dudes"]
+offset_left = -142.545
+offset_top = -126.673
+offset_right = -27.5454
+offset_bottom = -96.6728
+rotation = -0.314159
+theme_override_font_sizes/font_size = 20
+text = "Beer Alliance"
+
+[node name="ld" type="Label" parent="dudes"]
+offset_left = 21.3818
+offset_top = -167.655
+offset_right = 136.382
+offset_bottom = -132.655
+rotation = 0.296706
+text = "ludum Dare 55"
+
+[node name="bes" type="AnimatedSprite2D" parent="."]
+position = Vector2(670, 528)
+sprite_frames = SubResource("SpriteFrames_lof50")
+frame_progress = 0.49988
+
+[node name="cat" type="AnimatedSprite2D" parent="."]
+position = Vector2(1081, 520)
+sprite_frames = SubResource("SpriteFrames_qj7g0")
+frame = 5
+frame_progress = 0.706711
+
+[node name="stick" type="Sprite2D" parent="."]
+position = Vector2(233, 549)
+texture = ExtResource("11_e6yuv")
+
+[node name="play" type="TextureButton" parent="stick"]
+offset_left = -190.0
+offset_top = -246.0
+offset_right = 222.0
+offset_bottom = -92.0
+texture_normal = ExtResource("12_gbelt")
+
+[node name="Label" type="Label" parent="stick/play"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 40.0
+offset_right = 243.0
+offset_bottom = 101.0
+theme_override_font_sizes/font_size = 50
+text = "Play!"
+
+[node name="how" type="TextureButton" parent="stick"]
+offset_left = -194.0
+offset_top = -114.0
+offset_right = 218.0
+offset_bottom = 40.0
+texture_normal = ExtResource("12_gbelt")
+
+[node name="Label" type="Label" parent="stick/how"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 36.0
+offset_right = 332.0
+offset_bottom = 97.0
+theme_override_font_sizes/font_size = 50
+text = "How to play"
+
+[node name="quit" type="TextureButton" parent="stick"]
+offset_left = -197.0
+offset_top = 21.0
+offset_right = 215.0
+offset_bottom = 175.0
+texture_normal = ExtResource("12_gbelt")
+
+[node name="Label" type="Label" parent="stick/quit"]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 40.0
+offset_right = 254.0
+offset_bottom = 101.0
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[node name="name" type="Sprite2D" parent="."]
+position = Vector2(328, 215)
+texture = ExtResource("13_5yvmw")
