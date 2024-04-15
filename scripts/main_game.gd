@@ -78,6 +78,8 @@ func _process(delta):
 		$cat3/bubble.visible = true
 		$cat4/butt.visible = false
 		$cat4/bubble.visible = true
+	casted()
+
 	
 	$header_bg/count_left/text.text = str(int($cat/numb.text)+int($cat2/numb.text)+int($cat3/numb.text)+int($cat4/numb.text))
 	$header_bg/count_right/text.text = str(int($bes/numb.text)+int($bes2/numb.text)+int($bes3/numb.text))
@@ -283,3 +285,23 @@ func add_some():
 	$footer_bg/sp_butt5/text.text = str(sp5)
 	$footer_bg/sp_butt6/text_minus.text = "-" + str(sp6)
 	$footer_bg/sp_butt6/text.text = str(sp6)
+
+func casted():
+	if $"/root/Global".sp1 == false:
+		$footer_bg/sp_butt1/text_plus.visible =false
+		$footer_bg/sp_butt1/butt_b.disabled = true
+	if $"/root/Global".sp2 == false:
+		$footer_bg/sp_butt2/text_plus.visible =false
+		$footer_bg/sp_butt2/butt_b.disabled = true
+	if $"/root/Global".sp3 == false:
+		$footer_bg/sp_butt3/text_plus.visible =false
+		$footer_bg/sp_butt3/butt_b.disabled = true
+	if $"/root/Global".sp4 == false:
+		$footer_bg/sp_butt4/text_minus.visible =false
+		$footer_bg/sp_butt4/butt_r.disabled = true
+	if $"/root/Global".sp5 == false:
+		$footer_bg/sp_butt5/text_minus.visible =false
+		$footer_bg/sp_butt5/butt_r.disabled = true
+	if $"/root/Global".sp6 == false:
+		$footer_bg/sp_butt6/text_minus.visible =false
+		$footer_bg/sp_butt6/butt_r.disabled = true
