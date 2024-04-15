@@ -34,6 +34,13 @@ func _ready():
 	add_some()
 	$anim_game.play("fog")
 	
+	$"/root/Global".sp1 = true
+	$"/root/Global".sp2 = true
+	$"/root/Global".sp3 = true
+	$"/root/Global".sp4 = true
+	$"/root/Global".sp5 = true
+	$"/root/Global".sp6 = true
+	
 	$footer_bg/sp_butt1/butt_r.visible = false
 	$footer_bg/sp_butt1/butt_r.disabled = true
 	$footer_bg/sp_butt2/butt_r.visible = false
@@ -343,5 +350,6 @@ func _on_anim_game_animation_finished(anim_name):
 
 func _on_fadea_animation_finished(anim_name):
 	if anim_name == "fade_in":
+		print("fi")
 		get_tree().change_scene_to_file("res://scenes/resu.tscn")
 	pass # Replace with function body.

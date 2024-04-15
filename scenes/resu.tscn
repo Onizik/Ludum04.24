@@ -78,6 +78,17 @@ position = Vector2(0, 510.769)
 scale = Vector2(0.769231, 0.769231)
 texture = ExtResource("1_prwvp")
 
+[node name="result" type="Label" parent="fade/stick"]
+z_index = 2
+offset_left = -282.0
+offset_top = -106.0
+offset_right = 283.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 40
+text = "!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="info" type="Sprite2D" parent="fade/stick"]
 position = Vector2(0.769231, -108.462)
 scale = Vector2(1, 2.16491)
@@ -110,16 +121,6 @@ offset_right = 586.865
 offset_bottom = 184.91
 theme_override_font_sizes/font_size = 200
 text = "= 2"
-
-[node name="result" type="Label" parent="fade/stick/info"]
-offset_left = -167.0
-offset_top = -5.0
-offset_right = 161.0
-offset_bottom = 56.0
-theme_override_font_sizes/font_size = 50
-text = "Demons won!"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="button" type="TextureButton" parent="fade/stick"]
 offset_left = -210.769
