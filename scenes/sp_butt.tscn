@@ -45,3 +45,4 @@ theme_override_font_sizes/font_size = 50
 text = "3"
 
 [connection signal="pressed" from="butt_b" to="." method="_on_butt_pressed"]
+[connection signal="pressed" from="butt_r" to="." method="_on_butt_r_pressed"]

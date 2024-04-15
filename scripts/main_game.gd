@@ -48,7 +48,6 @@ func _ready():
 	
 	$footer_bg/sp_butt1/butt_r.visible = false
 	$footer_bg/sp_butt1/butt_r.disabled = true
-	
 	$footer_bg/sp_butt2/butt_r.visible = false
 	$footer_bg/sp_butt2/butt_r.disabled = true
 	$footer_bg/sp_butt3/butt_r.visible = false
@@ -61,6 +60,39 @@ func _ready():
 	$footer_bg/sp_butt6/butt_b.disabled = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if $"/root/Global".spell:
+		$bes/butt.visible = true
+		$bes/bubble.visible = false
+		$bes2/butt.visible = true
+		$bes2/bubble.visible = false
+		$bes3/butt.visible = true
+		$bes3/bubble.visible = false
+		
+		$cat/butt.visible = true
+		$cat/bubble.visible = false
+		$cat2/butt.visible = true
+		$cat2/bubble.visible = false
+		$cat3/butt.visible = true
+		$cat3/bubble.visible = false
+		$cat4/butt.visible = true
+		$cat4/bubble.visible = false
+	else:
+		$bes/butt.visible = false
+		$bes/bubble.visible = true
+		$bes2/butt.visible = false
+		$bes2/bubble.visible = true
+		$bes3/butt.visible = false
+		$bes3/bubble.visible = true
+		
+		$cat/butt.visible = false
+		$cat/bubble.visible = true
+		$cat2/butt.visible = false
+		$cat2/bubble.visible = true
+		$cat3/butt.visible = false
+		$cat3/bubble.visible = true
+		$cat4/butt.visible = false
+		$cat4/bubble.visible = true
+	
 	pass
 
 

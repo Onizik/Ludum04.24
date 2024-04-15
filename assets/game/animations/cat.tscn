@@ -1,6 +1,7 @@
-[gd_scene load_steps=34 format=3 uid="uid://c2i2u3j54rnpu"]
+[gd_scene load_steps=35 format=3 uid="uid://c2i2u3j54rnpu"]
 
 [ext_resource type="Texture2D" uid="uid://biuunoqdcrddo" path="res://assets/game/enemy/cat1/parts/body.png" id="1_aqdl7"]
+[ext_resource type="Script" path="res://assets/game/animations/cat.gd" id="1_hk32i"]
 [ext_resource type="Texture2D" uid="uid://jlv5w4o8p1ls" path="res://assets/game/red.png" id="1_xps3x"]
 [ext_resource type="Texture2D" uid="uid://bkpafbikaxmxk" path="res://assets/game/green.png" id="2_bl3rt"]
 [ext_resource type="Texture2D" uid="uid://bei7h76j73tv2" path="res://assets/game/enemy/cat1/parts/arm_l.png" id="2_vppkb"]
@@ -1212,8 +1213,10 @@ _data = {
 }
 
 [node name="cat" type="Node2D"]
+script = ExtResource("1_hk32i")
 
 [node name="butt" type="TextureButton" parent="."]
+visible = false
 offset_left = -69.0
 offset_top = -165.0
 offset_right = 71.0
@@ -1342,7 +1345,6 @@ texture = ExtResource("24_ksnl6")
 flip_h = true
 
 [node name="bubble" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(1, -40)
 texture = ExtResource("27_8gi63")
 
@@ -1353,3 +1355,5 @@ offset_right = 13.0
 offset_bottom = -115.0
 theme_override_font_sizes/font_size = 30
 text = "2"
+
+[connection signal="pressed" from="butt" to="." method="_on_butt_pressed"]
