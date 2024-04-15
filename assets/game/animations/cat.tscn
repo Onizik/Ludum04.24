@@ -1230,7 +1230,6 @@ libraries = {
 }
 
 [node name="cat1" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("1_aqdl7")
 flip_h = true
 

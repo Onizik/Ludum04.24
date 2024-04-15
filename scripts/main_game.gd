@@ -305,3 +305,8 @@ func casted():
 	if $"/root/Global".sp6 == false:
 		$footer_bg/sp_butt6/text_minus.visible =false
 		$footer_bg/sp_butt6/butt_r.disabled = true
+
+
+func _on_fight_pressed():
+	$anim_game.play("fight")
+	pass # Replace with function body.
