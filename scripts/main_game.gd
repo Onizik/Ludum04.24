@@ -28,7 +28,7 @@ var result = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$fadea.play("fade")
+	#$fadea.play("fade")
 	$header_bg/round/round.text = str("Round " + str($"/root/Global".round))
 	generate()
 	add_some()
@@ -314,17 +314,41 @@ func _on_fight_pressed():
 	$anim_game.play("fight")
 	result = int($header_bg/count_left/text.text) - int($header_bg/count_right/text.text)
 	$"/root/Global".round +=1
+	$"/root/Global".result = result
 	if result >0:
 		$"/root/Global".los1 += 1
 	elif result<0:
 		$"/root/Global".los2 += 1
 	elif result==0:
 		$"/root/Global".win += 1
+		
+	results()
 	pass # Replace with function body.
 
 
-func _on_fadea_animation_finished(anim_name):
-	pass # Replace with function body.
 
+
+func results ():
+	if $"/root/Global".result >0:
+		$fade/stick/info/cat/count.text = "= " + str(result)
+		$fade/stick/info/bes/count.text = "= 0"
+		$fade/stick/info/result.text = "Cats won this round!"
+	elif $"/root/Global".result <0:
+		$fade/stick/info/bes/count.text = "= " + str(result)
+		$fade/stick/info/cat/count.text = "= 0"
+		$fade/stick/info/result.text = "Demons won this round!"
+	elif $"/root/Global".result ==0:
+		$fade/stick/info/bes/count.text = "= 0"
+		$fade/stick/info/cat/count.text = "= 0"
+		$fade/stick/info/result.text = "Tie! Well done!"
+	print("er")
+	$fadea.play("fade_in")
+	
+	$fadea.play("result")
+	
 func new_round():
 	pass
+
+
+func _on_anim_game_animation_finished(anim_name):
+	pass # Replace with function body.

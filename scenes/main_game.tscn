@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cdrc1qlfdrr2f"]
+[gd_scene load_steps=37 format=3 uid="uid://cdrc1qlfdrr2f"]
 
 [ext_resource type="Script" path="res://scripts/main_game.gd" id="1_ld8cn"]
 [ext_resource type="Texture2D" uid="uid://deqp6y2gi4x7f" path="res://assets/game/bg/field.png" id="2_0faxp"]
@@ -1172,10 +1172,10 @@ tracks/0/path = NodePath("fade:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [false, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1229,6 +1229,33 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_p1fr7"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fade:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_dw6bx"]
 resource_name = "result"
 tracks/0/type = "value"
@@ -1248,6 +1275,7 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_nkjan"),
 "fade": SubResource("Animation_cp4a2"),
+"fade_in": SubResource("Animation_p1fr7"),
 "result": SubResource("Animation_dw6bx")
 }
 
@@ -1543,6 +1571,7 @@ text = "0
 "
 
 [node name="fade" type="Sprite2D" parent="."]
+visible = false
 z_index = 6
 position = Vector2(640, 360)
 scale = Vector2(1.3, 1.3)
@@ -1611,6 +1640,7 @@ offset_bottom = 108.462
 theme_override_font_sizes/font_size = 50
 text = "Next Round!"
 
+[connection signal="animation_finished" from="anim_game" to="." method="_on_anim_game_animation_finished"]
 [connection signal="animation_finished" from="fadea" to="." method="_on_fadea_animation_finished"]
 [connection signal="current_animation_changed" from="fadea" to="." method="_on_fadea_current_animation_changed"]
 [connection signal="pressed" from="footer_bg/fight" to="." method="_on_fight_pressed"]
