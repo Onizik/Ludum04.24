@@ -24,10 +24,12 @@ var b3 = 0
 
 var rng = RandomNumberGenerator.new()
 
+var result = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$fadea.play("fade")
-	
+	$header_bg/round/round.text = str("Round " + str($"/root/Global".round))
 	generate()
 	add_some()
 	$anim_game.play("fog")
@@ -310,8 +312,19 @@ func casted():
 
 func _on_fight_pressed():
 	$anim_game.play("fight")
+	result = int($header_bg/count_left/text.text) - int($header_bg/count_right/text.text)
+	$"/root/Global".round +=1
+	if result >0:
+		$"/root/Global".los1 += 1
+	elif result<0:
+		$"/root/Global".los2 += 1
+	elif result==0:
+		$"/root/Global".win += 1
 	pass # Replace with function body.
 
 
 func _on_fadea_animation_finished(anim_name):
 	pass # Replace with function body.
+
+func new_round():
+	pass
