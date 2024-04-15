@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bifgye0hdld12"]
+[gd_scene load_steps=20 format=3 uid="uid://bifgye0hdld12"]
 
 [ext_resource type="Texture2D" uid="uid://bi5ebg8h04k04" path="res://assets/menu/bg_trees.png" id="1_pp7l4"]
 [ext_resource type="Texture2D" uid="uid://dhcr5m7wfch8s" path="res://assets/menu/bg.png" id="1_pw50o"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b7r4wc5kt0oas" path="res://assets/menu/stck.png" id="11_e6yuv"]
 [ext_resource type="Texture2D" uid="uid://54uem4v5i4ky" path="res://assets/menu/buttons.png" id="12_gbelt"]
 [ext_resource type="Texture2D" uid="uid://bc71c4bijowd2" path="res://assets/menu/name.png" id="13_5yvmw"]
+[ext_resource type="Texture2D" uid="uid://8e0unrqwllj2" path="res://assets/cut/back.png" id="14_03nhw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lof50"]
 animations = [{
@@ -86,6 +87,42 @@ animations = [{
 "name": &"default",
 "speed": 6.0
 }]
+
+[sub_resource type="Animation" id="Animation_sg1eq"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_eq2ev"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_blfom"]
+_data = {
+"RESET": SubResource("Animation_eq2ev"),
+"fade": SubResource("Animation_sg1eq")
+}
 
 [node name="menu" type="Node2D"]
 script = ExtResource("1_ywdf8")
@@ -187,3 +224,17 @@ text = "Quit"
 [node name="name" type="Sprite2D" parent="."]
 position = Vector2(328, 215)
 texture = ExtResource("13_5yvmw")
+
+[node name="AP" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_blfom")
+}
+
+[node name="fade" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(640, 360)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("14_03nhw")
+
+[connection signal="pressed" from="stick/play" to="." method="_on_play_pressed"]
+[connection signal="animation_finished" from="AP" to="." method="_on_ap_animation_finished"]

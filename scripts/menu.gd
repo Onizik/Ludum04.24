@@ -10,3 +10,14 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_play_pressed():
+	$AP.play("fade")
+	
+	
+	pass # Replace with function body.
+
+
+func _on_ap_animation_finished(anim_name):
+	get_tree().change_scene_to_file("res://scenes/main_game.tscn")

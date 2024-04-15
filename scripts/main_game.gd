@@ -26,8 +26,9 @@ var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$fadea.play("fade")
 	generate()
-	$anim_game.play("fog")
+	
 	add_some()
 	
 	
@@ -287,6 +288,7 @@ func add_some():
 	$footer_bg/sp_butt6/text.text = str(sp6)
 
 func casted():
+	$anim_game.play("fog")
 	if $"/root/Global".sp1 == false:
 		$footer_bg/sp_butt1/text_plus.visible =false
 		$footer_bg/sp_butt1/butt_b.disabled = true
