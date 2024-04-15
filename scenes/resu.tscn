@@ -1,0 +1,122 @@
+[gd_scene load_steps=11 format=3 uid="uid://df7wk7bja8ful"]
+
+[ext_resource type="Texture2D" uid="uid://8e0unrqwllj2" path="res://assets/cut/back.png" id="1_eh61s"]
+[ext_resource type="Texture2D" uid="uid://b7r4wc5kt0oas" path="res://assets/menu/stck.png" id="1_prwvp"]
+[ext_resource type="Script" path="res://scenes/resu.gd" id="1_wa27y"]
+[ext_resource type="Texture2D" uid="uid://by4lkq7d8sg4g" path="res://assets/cut/text.png" id="2_hwe8p"]
+[ext_resource type="Texture2D" uid="uid://dy1hinxngltxu" path="res://assets/menu/cat1.png" id="3_5p6nv"]
+[ext_resource type="Texture2D" uid="uid://5oluwpuqa130" path="res://assets/menu/bes2.png" id="4_0pnqy"]
+[ext_resource type="Texture2D" uid="uid://54uem4v5i4ky" path="res://assets/menu/buttons.png" id="5_hkr2u"]
+
+[sub_resource type="Animation" id="Animation_2ycqh"]
+resource_name = "rez"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fade/stick:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 510.769), Vector2(0, 81.538)]
+}
+
+[sub_resource type="Animation" id="Animation_yqjry"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fade/stick:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 510.769)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5g4yd"]
+_data = {
+"RESET": SubResource("Animation_yqjry"),
+"rez": SubResource("Animation_2ycqh")
+}
+
+[node name="rez" type="Node2D"]
+script = ExtResource("1_wa27y")
+
+[node name="ap" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5g4yd")
+}
+
+[node name="fade" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("1_eh61s")
+
+[node name="stick" type="Sprite2D" parent="fade"]
+position = Vector2(0, 510.769)
+scale = Vector2(0.769231, 0.769231)
+texture = ExtResource("1_prwvp")
+
+[node name="info" type="Sprite2D" parent="fade/stick"]
+position = Vector2(0.769231, -108.462)
+scale = Vector2(1, 2.16491)
+texture = ExtResource("2_hwe8p")
+
+[node name="cat" type="Sprite2D" parent="fade/stick/info"]
+position = Vector2(-175.385, -23.8063)
+scale = Vector2(0.240745, 0.111203)
+texture = ExtResource("3_5p6nv")
+flip_h = true
+
+[node name="count" type="Label" parent="fade/stick/info/cat"]
+offset_left = 236.446
+offset_top = -118.223
+offset_right = 635.446
+offset_bottom = 194.777
+theme_override_font_sizes/font_size = 200
+text = "= 2"
+
+[node name="bes" type="Sprite2D" parent="fade/stick/info"]
+position = Vector2(63.8462, -21.3191)
+scale = Vector2(0.270243, 0.124829)
+texture = ExtResource("4_0pnqy")
+flip_h = true
+
+[node name="count" type="Label" parent="fade/stick/info/bes"]
+offset_left = 187.865
+offset_top = -128.09
+offset_right = 586.865
+offset_bottom = 184.91
+theme_override_font_sizes/font_size = 200
+text = "= 2"
+
+[node name="result" type="Label" parent="fade/stick/info"]
+offset_left = -167.0
+offset_top = -5.0
+offset_right = 161.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 50
+text = "Demons won!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="button" type="TextureButton" parent="fade/stick"]
+offset_left = -210.769
+offset_top = 18.4615
+offset_right = 201.231
+offset_bottom = 172.462
+texture_normal = ExtResource("5_hkr2u")
+
+[node name="text" type="Label" parent="fade/stick/button"]
+layout_mode = 0
+offset_left = 61.5385
+offset_top = 38.4615
+offset_right = 380.538
+offset_bottom = 108.462
+theme_override_font_sizes/font_size = 50
+text = "Next Round!"

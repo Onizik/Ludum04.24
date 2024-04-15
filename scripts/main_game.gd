@@ -28,7 +28,7 @@ var result = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#$fadea.play("fade")
+	$fadea.play("fade")
 	$header_bg/round/round.text = str("Round " + str($"/root/Global".round))
 	generate()
 	add_some()
@@ -322,33 +322,26 @@ func _on_fight_pressed():
 	elif result==0:
 		$"/root/Global".win += 1
 		
-	results()
 	pass # Replace with function body.
 
 
 
 
-func results ():
-	if $"/root/Global".result >0:
-		$fade/stick/info/cat/count.text = "= " + str(result)
-		$fade/stick/info/bes/count.text = "= 0"
-		$fade/stick/info/result.text = "Cats won this round!"
-	elif $"/root/Global".result <0:
-		$fade/stick/info/bes/count.text = "= " + str(result)
-		$fade/stick/info/cat/count.text = "= 0"
-		$fade/stick/info/result.text = "Demons won this round!"
-	elif $"/root/Global".result ==0:
-		$fade/stick/info/bes/count.text = "= 0"
-		$fade/stick/info/cat/count.text = "= 0"
-		$fade/stick/info/result.text = "Tie! Well done!"
-	print("er")
-	$fadea.play("fade_in")
-	
-	$fadea.play("result")
+
 	
 func new_round():
 	pass
 
 
 func _on_anim_game_animation_finished(anim_name):
+	if anim_name == "fight":
+		$fadea.play("fade_in")
+	
+
+
+
+
+func _on_fadea_animation_finished(anim_name):
+	if anim_name == "fade_in":
+		get_tree().change_scene_to_file("res://scenes/resu.tscn")
 	pass # Replace with function body.
