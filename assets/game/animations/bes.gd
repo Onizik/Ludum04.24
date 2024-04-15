@@ -1,4 +1,5 @@
 extends Node2D
+var go = false
 var count = 3
 
 # Called when the node enters the scene tree for the first time.
@@ -8,12 +9,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$numb.text = str(count)
+	if go:
+		$numb.text = str(count)
+		go = false
 	pass
 
 
 func _on_butt_pressed():
 	$"/root/Global".spell = false
+	go = true
 	if $"/root/Global".side:
 		count += int($"/root/Global".number)
 	else: count -= int($"/root/Global".number)

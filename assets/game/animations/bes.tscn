@@ -688,6 +688,7 @@ libraries = {
 }
 
 [node name="bes1" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 texture = ExtResource("1_hgl7b")
 
@@ -756,6 +757,6 @@ offset_top = -148.0
 offset_right = 14.0
 offset_bottom = -111.0
 theme_override_font_sizes/font_size = 30
-text = "3"
+text = "0"
 
 [connection signal="pressed" from="butt" to="." method="_on_butt_pressed"]
