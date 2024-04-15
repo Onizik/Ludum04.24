@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://df7wk7bja8ful"]
+[gd_scene load_steps=12 format=3 uid="uid://df7wk7bja8ful"]
 
 [ext_resource type="Texture2D" uid="uid://8e0unrqwllj2" path="res://assets/cut/back.png" id="1_eh61s"]
 [ext_resource type="Texture2D" uid="uid://b7r4wc5kt0oas" path="res://assets/menu/stck.png" id="1_prwvp"]
@@ -38,9 +38,25 @@ tracks/0/keys = {
 "values": [Vector2(0, 510.769)]
 }
 
+[sub_resource type="Animation" id="Animation_jolkv"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fade/stick:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 81.538), Vector2(0, 510)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5g4yd"]
 _data = {
 "RESET": SubResource("Animation_yqjry"),
+"fade": SubResource("Animation_jolkv"),
 "rez": SubResource("Animation_2ycqh")
 }
 
@@ -120,3 +136,6 @@ offset_right = 380.538
 offset_bottom = 108.462
 theme_override_font_sizes/font_size = 50
 text = "Next Round!"
+
+[connection signal="animation_finished" from="ap" to="." method="_on_ap_animation_finished"]
+[connection signal="pressed" from="fade/stick/button" to="." method="_on_button_pressed"]
