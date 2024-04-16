@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Ludum 04.24"
-run/main_scene="res://scenes/main_game.tscn"
+config/name="magical conspiracy"
+run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://cover.png"
 
 [autoload]
 
@@ -27,3 +27,7 @@ window/size/viewport_height=720
 [gui]
 
 theme/custom_font="res://vinque rg.otf"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"

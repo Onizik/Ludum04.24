@@ -5,14 +5,14 @@ extends Node2D
 func _ready():
 	$AP.play("fade")
 	if $"/root/Global".win > $"/root/Global".los1 and $"/root/Global".win > $"/root/Global".los2:
-		$text/text.text = "Friends win this battle!"
-		$win.frame = 0
+		$bib/text/text.text = "Friends win this battle!"
+		$bib/win.frame = 0
 	elif $"/root/Global".los1 > $"/root/Global".los2 and $"/root/Global".los1 > $"/root/Global".win:
-		$text/text.text = "Cats win this battle!"
-		$win.frame = 2
+		$bib/text/text.text = "Cats win this battle!"
+		$bib/win.frame = 2
 	elif $"/root/Global".los2 > $"/root/Global".los1 and $"/root/Global".los2 > $"/root/Global".win:
-		$text/text.text = "Demons win this battle!"
-		$win.frame = 1
+		$bib/text/text.text = "Demons win this battle!"
+		$bib/win.frame = 1
 	pass # Replace with function body.
 
 

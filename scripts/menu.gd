@@ -21,3 +21,7 @@ func _on_play_pressed():
 
 func _on_ap_animation_finished(anim_name):
 	get_tree().change_scene_to_file("res://scenes/main_game.tscn")
+
+
+func _on_quit_pressed():
+	get_tree().quit()

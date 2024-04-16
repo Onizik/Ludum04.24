@@ -1158,6 +1158,21 @@ _data = {
 "fog": SubResource("Animation_ybfr5")
 }
 
+[sub_resource type="Animation" id="Animation_bmwwv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_6ts7y"]
 resource_name = "fade"
 tracks/0/type = "value"
@@ -1186,21 +1201,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_bmwwv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("fade:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iur3q"]
@@ -1382,16 +1382,16 @@ offset_right = 137.0
 offset_bottom = 74.0
 texture_normal = ExtResource("11_tbac7")
 
-[node name="text" type="RichTextLabel" parent="footer_bg/fight"]
-visible = false
+[node name="text" type="Label" parent="footer_bg/fight"]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 27.0
-offset_right = 279.0
-offset_bottom = 160.0
-theme_override_font_sizes/normal_font_size = 67
-text = "  Fight!"
-tab_size = 7
+offset_left = 16.0
+offset_top = 6.0
+offset_right = 264.0
+offset_bottom = 132.0
+theme_override_font_sizes/font_size = 60
+text = " Fight!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="sp_butt1" parent="footer_bg" instance=ExtResource("13_6i7n4")]
 position = Vector2(-549, -2)
